@@ -1,0 +1,11 @@
+.python-version
+.cache
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+*.egg-info/
+artifacts/
+*.session
+.idea/
+deleteme.*
