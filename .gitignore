@@ -9,3 +9,4 @@ artifacts/
 *.session
 .idea/
 deleteme.*
+.vscode/
