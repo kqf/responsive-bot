@@ -1,11 +1,9 @@
-from functools import partial
 import logging
-
+from functools import partial
 
 from telegram.ext import Application, MessageHandler, filters
 
 from bot.settings import config
-
 
 # Enable logging
 logging.basicConfig(
@@ -29,8 +27,6 @@ async def _forward_to_admins(update, context, data):
             "message_id": response.message_id,
             "user_id": user_id,
         }
-
-    return "Responded"
 
 
 async def thanks(update, context, data):
