@@ -3,4 +3,5 @@ python-telegram-bot
 .
 
 pytest
+pytest-cov
 mypy
