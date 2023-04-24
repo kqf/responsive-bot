@@ -1,3 +1,6 @@
 environs
 python-telegram-bot
 .
+
+pytest
+mypy
