@@ -2,6 +2,7 @@ environs
 python-telegram-bot
 .
 
+pre-commit
 pytest
 pytest-cov
 mypy
