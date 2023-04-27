@@ -1,5 +1,4 @@
-# Share with me bot [![Build Status](https://travis-ci.com/kqf/share-bot.svg?branch=master)](https://travis-ci.com/kqf/share-bot)
-
+# Jabber with admin bot [![tests](https://github.com/kqf/responsive-bot/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/kqf/responsive-bot/actions/workflows/ci.yml)
 A simple feedback bot.
 
 ## Installation
