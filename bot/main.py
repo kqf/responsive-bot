@@ -22,7 +22,7 @@ async def _forward_to_admins(update, context, data):
             chat_id=admin_id,
             text="Please respond to this message to answer the question.",
         )
-        data[f"response_{admin_id}"] = {
+        data[admin_id] = {
             "original_message_id": message.message_id,
             "message_id": response.message_id,
             "user_id": user_id,
@@ -36,7 +36,7 @@ async def thanks(update, context, data):
 async def handle_admin_reply(update, context, data):
     message_id = update.message.reply_to_message.message_id
     for admin_id in config.admin_ids:
-        response = data.get(f"response_{admin_id}")
+        response = data.get(admin_id)
         if response is None:
             return
 
