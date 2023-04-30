@@ -40,12 +40,13 @@ async def handle_admin_reply(update, context, data):
         if response is None:
             return
 
+        # Make sure admins don't mix up
         if response["message_id"] != message_id:
             continue
 
         resp = f"Admin replied: {update.message.text}"
         await context.bot.send_message(chat_id=response["user_id"], text=resp)
-        del data["response_{admin_id}"]
+        del data[admin_id]
 
 
 def main():
