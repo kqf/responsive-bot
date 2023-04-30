@@ -1,4 +1,4 @@
-# Jabber with admin bot [![tests](https://github.com/kqf/responsive-bot/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/kqf/responsive-bot/actions/workflows/ci.yml)
+# Jabber with admin bot [![tests](https://github.com/kqf/responsive-bot/actions/workflows/ci.yml/badge.svg?branch=develop)](https://github.com/kqf/responsive-bot/actions/workflows/ci.yml)
 A simple feedback bot.
 
 ## Installation
