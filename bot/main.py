@@ -28,7 +28,7 @@ class Config:
 config = Config()
 
 
-async def _forward_to_admins(update, context, data):
+async def message(update, context, data):
     user_id = update.message.from_user.id
     for admin_id in config.admin_ids:
         message = await update.message.forward(admin_id)
@@ -41,10 +41,6 @@ async def _forward_to_admins(update, context, data):
             "message_id": response.message_id,
             "user_id": user_id,
         }
-
-
-async def thanks(update, context, data):
-    await _forward_to_admins(update, context, data)
 
 
 async def handle_admin_reply(update, context, data):
@@ -68,7 +64,7 @@ def main():
     data = {}
     app.add_handler(
         MessageHandler(
-            ~filters.COMMAND & ~filters.REPLY, partial(thanks, data=data)
+            ~filters.COMMAND & ~filters.REPLY, partial(message, data=data)
         )
     )
     app.add_handler(
