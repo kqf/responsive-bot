@@ -28,7 +28,7 @@ class Config:
 config = Config()
 
 
-async def thanks(update, context, data):
+async def message(update, context, data):
     user_id = update.message.from_user.id
     for admin_id in config.admin_ids:
         message = await update.message.forward(admin_id)
@@ -64,7 +64,7 @@ def main():
     data = {}
     app.add_handler(
         MessageHandler(
-            ~filters.COMMAND & ~filters.REPLY, partial(thanks, data=data)
+            ~filters.COMMAND & ~filters.REPLY, partial(message, data=data)
         )
     )
     app.add_handler(
