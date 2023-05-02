@@ -74,7 +74,7 @@ def main():
     )
     app.add_handler(
         MessageHandler(
-            filters.REPLY,
+            ~filters.COMMAND & filters.REPLY,
             partial(handle_admin_reply, data=data),
         ),
     )
