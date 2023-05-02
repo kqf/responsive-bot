@@ -4,6 +4,14 @@ from functools import partial
 from environs import Env
 from telegram.ext import Application, MessageHandler, filters
 
+# Enable logging
+logging.basicConfig(
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    level=logging.INFO,
+)
+
+logger = logging.getLogger(__name__)
+
 
 class Config:
     def __init__(self):
@@ -18,15 +26,6 @@ class Config:
 
 
 config = Config()
-
-
-# Enable logging
-logging.basicConfig(
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-    level=logging.INFO,
-)
-
-logger = logging.getLogger(__name__)
 
 
 async def _forward_to_admins(update, context, data):
