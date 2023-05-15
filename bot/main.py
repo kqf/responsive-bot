@@ -73,7 +73,18 @@ def main():
             partial(handle_admin_reply, data=data),
         ),
     )
-    app.run_polling()
+
+    # No webhook -- run in the debug mode
+    # if config.webhook is None:
+    #     app.start_polling()
+    #     app.idle()
+    #     return
+
+    app.run_webhook(
+        listen="0.0.0.0",
+        port=config.port,
+        url_path=config.token
+    )
 
 
 if __name__ == "__main__":
