@@ -80,11 +80,7 @@ def main():
     #     app.idle()
     #     return
 
-    app.run_webhook(
-        listen="0.0.0.0",
-        port=config.port,
-        url_path=config.token
-    )
+    app.run_webhook(listen="0.0.0.0", port=config.port, url_path=config.token)
 
 
 if __name__ == "__main__":
