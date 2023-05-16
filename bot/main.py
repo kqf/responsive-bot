@@ -54,8 +54,13 @@ async def handle_admin_reply(update, context, data):
         if response["message_id"] != message_id:
             continue
 
-        resp = f"Admin replied: {update.message.text}"
-        await context.bot.send_message(chat_id=response["user_id"], text=resp)
+        # Reply to user's request
+        await context.bot.send_message(
+            chat_id=response["user_id"],
+            text=update.message.text,
+        )
+
+        # Clear the cache
         del data[admin_id]
 
 
@@ -76,8 +81,7 @@ def main():
 
     # No webhook -- run in the debug mode
     if config.webhook is None:
-        app.start_polling()
-        app.idle()
+        app.run_polling()
         return
 
     app.run_webhook(
