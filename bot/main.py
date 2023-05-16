@@ -75,12 +75,17 @@ def main():
     )
 
     # No webhook -- run in the debug mode
-    # if config.webhook is None:
-    #     app.start_polling()
-    #     app.idle()
-    #     return
+    if config.webhook is None:
+        app.start_polling()
+        app.idle()
+        return
 
-    app.run_webhook(listen="0.0.0.0", port=config.port, url_path=config.token)
+    app.run_webhook(
+        listen="0.0.0.0",
+        port=config.port,
+        url_path=config.token,
+        webhook_url=config.webhook,
+    )
 
 
 if __name__ == "__main__":
