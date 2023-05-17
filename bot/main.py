@@ -69,7 +69,10 @@ def main():
     data = {}
     app.add_handler(
         MessageHandler(
-            ~filters.COMMAND & ~filters.REPLY, partial(message, data=data)
+            ~filters.COMMAND
+            & ~filters.REPLY
+            & ~filters.User(config.admin_ids),
+            partial(message, data=data),
         )
     )
     app.add_handler(
